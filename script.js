@@ -2,8 +2,24 @@
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", (e) => {
   mobileMenu.classList.toggle("hidden");
+  e.stopPropagation(); // Prevent the click from closing menu immediately
+});
+
+// Close mobile menu if clicking outside
+document.addEventListener("click", (e) => {
+  if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    mobileMenu.classList.add("hidden");
+  }
+});
+
+// Optional: close menu when clicking a link inside
+const menuLinks = mobileMenu.querySelectorAll("a");
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+  });
 });
 
 // Gallery Image Modal
