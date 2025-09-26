@@ -77,3 +77,27 @@ scrollContainers.forEach(container => {
     container.scrollLeft = scrollLeft - walk;
   });
 });
+// Video Modal
+function openVideoModal(src) {
+  const modal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
+  modalVideo.src = src;
+  modal.classList.remove("hidden");
+  modal.style.display = "flex";
+  modalVideo.play(); // auto-play when opened
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
+  modalVideo.pause();   // pause when closed
+  modalVideo.src = "";  // reset source
+  modal.classList.add("hidden");
+  modal.style.display = "none";
+}
+
+// Close video modal by clicking outside video
+document.getElementById("videoModal").addEventListener("click", (e) => {
+  if (e.target.id === "videoModal") closeVideoModal();
+});
+
