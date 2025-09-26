@@ -10,18 +10,26 @@ menuBtn.addEventListener("click", () => {
 function openModal(src) {
   const modal = document.getElementById("imageModal");
   const modalImage = document.getElementById("modalImage");
-  modalImage.src = src;
+
+  modalImage.src = src;           // Set clicked image
   modal.classList.remove("hidden");
-  modal.classList.add("flex");
+  modal.style.display = "flex";   // Show modal as flex
 }
 
 function closeModal() {
   const modal = document.getElementById("imageModal");
   modal.classList.add("hidden");
-  modal.classList.remove("flex");
+  modal.style.display = "none";   // Hide modal
 }
 
-// Optional: swipe gallery with buttons (if needed)
+// Close modal when clicking outside the image
+document.getElementById("imageModal").addEventListener("click", (e) => {
+  if(e.target.id === "imageModal") {
+    closeModal();
+  }
+});
+
+// Horizontal Scroll Drag for Gallery (Optional)
 const scrollContainers = document.querySelectorAll(".scroll-container");
 scrollContainers.forEach(container => {
   let isDown = false;
