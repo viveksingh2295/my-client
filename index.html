@@ -1,0 +1,554 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Glitter Diary</title> 
+  <script src="https://cdn.tailwindcss.com"></script> 
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head> 
+<body style="font-family: 'Poppins', sans-serif;">
+  ...
+</body>
+
+<nav class="fixed w-full top-0 left-0 bg-pink-200 shadow z-50">
+  <div class="container mx-auto flex justify-between items-center  py-4">
+    <h1 class="text-2xl font-bold text-pink-600 ">Glitter Diary</h1>
+    <ul class="hidden md:flex space-x-3">
+      <li><a href="#home" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Home</a></li>
+      <li><a href="#about" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">About</a></li>
+      <li><a href="#Gallery" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
+      <li><a href="#videos" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Videos</a></li>
+      <li><a href="#services" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Services</a></li>
+      <li><a href="#contact" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
+    </ul>
+
+    <button id="menu-btn" class="md:hidden text-pink text-3xl focus:outline-none">
+      ☰
+    </button>
+  </div>
+
+  <ul id="mobile-menu" class="hidden flex-col space-y-2 bg-pink-100 px-6 py-4 md:hidden">
+    <li><a href="#home" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Home</a></li>
+    <li><a href="#about" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">About</a></li>
+    <li><a href="#Gallery" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
+    <li><a href="#videos" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Videos</a></li>
+    <li><a href="#services" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Services</a></li>
+    <li><a href="#contact" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+<section id="home" class="hero h-screen flex items-center justify-center text-center py-20 px-10 bg-pink-300" style="background-image: url('assets/images/rounak\ logo.png');background-position:bottom; background-size: 100%;"> 
+  <div> 
+    <h2 class="text-5xl font-bold text-white">Welcome to Glitter Diary</h2> 
+    <p class="mt-4 text-lg font-semibold text-black">Bringing out your inner beauty with art and passion</p> 
+    <a href="#contact" class="mt-6 inline-block bg-pink-500 text-white px-6 py-3 rounded-lg shadow hover:bg-white-400">Book Now</a> 
+  </div> 
+</section>
+
+<section id="about" class="py-20 bg-pink-200 "> 
+  <div class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row items-center"> 
+    <img src="assets/images/rounak.jpg" class="w-64 h-64 object-cover rounded-full shadow-lg"> 
+    <div class="md:ml-10 mt-4:"> 
+      <h2 class="text-4xl text-bold text-black">About Me</h2> 
+      <p class="mx-auto text-text-bold text-pink-600">I’m Rounak Bhargava, a freelance professional makeup artist with 4 years of experience in bridal, party, and special event makeup.
+        I specialize in creating elegant, personalized looks that enhance your natural beauty and keep you glowing all day. Let’s make your special moments unforgettable!.</p> 
+    </div> 
+    <div> 
+      <h3 class="text-2xl  font-bold mb-4">Education & Experience</h3> 
+      <ul class="text-gray-700 space-y-4"> 
+        <li class="p-4 bg-gray-100 rounded-2xl transform transition duration-300 hover:scale-105"> 
+          <span class="font-bold text-pink-600">2018:</span> Diploma in Cosmetology at Bijal Gada Makeup Academy 
+        </li> 
+        <li class="p-4 bg-gray-100 rounded-2xl transform transition duration-300 hover:scale-105"> 
+          <span class="font-bold text-pink-600">2022:</span> Master's in cosmetology
+        </li> 
+        <li class="p-4 bg-gray-100 rounded-xl shadow-sm transition duration-300 hover:scale-105">  
+          <span class="font-bold text-pink-600">Specializations:</span> Bridal Makeup ,Party & Event Makeup , Nail Extensions ,Hair Styling ,Eyelash Extensions , Senior Skin Therapist. 
+        </li> 
+      </ul> 
+    </div> 
+  </div> 
+</section> 
+
+<section id="Gallery" class="py-20 bg-pink-100 relative">
+  <h2 class="text-4xl font-bold text-black text-center mb-10">
+    Happy Clients
+  </h2>
+  <div class="overflow-x-auto scrollbar-hide px-6">
+    <div class="flex space-x-6 w-max pb-4">
+      <!-- Gallery Images -->
+      
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/1.jpg')">
+          <img src="assets/Gallery/Photos/1.jpg" alt="Client 1" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/2.jpg')">
+          <img src="assets/Gallery/Photos/2.jpg" alt="Client 2" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/3.jpg')">
+          <img src="assets/Gallery/Photos/3.jpg" alt="Client 3" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/4.jpg')">
+          <img src="assets/Gallery/Photos/4.jpg" alt="Client 4" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/5.jpg')">
+          <img src="assets/Gallery/Photos/5.jpg" alt="Client 5" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/6.jpg')">
+          <img src="assets/Gallery/Photos/6.jpg" alt="Client 6" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/7.jpg')">
+          <img src="assets/Gallery/Photos/7.jpg" alt="Client 7" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/8.jpg')">
+          <img src="assets/Gallery/Photos/8.jpg" alt="Client 8" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/9.jpg')">
+          <img src="assets/Gallery/Photos/9.jpg" alt="Client 9" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/10.jpg')">
+          <img src="assets/Gallery/Photos/10.jpg" alt="Client 10" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/11.jpg')">
+          <img src="assets/Gallery/Photos/11.jpg" alt="Client 11" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/12.jpg')">
+          <img src="assets/Gallery/Photos/12.jpg" alt="Client 12" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/13.jpg')">
+          <img src="assets/Gallery/Photos/13.jpg" alt="Client 13" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/14.jpg')">
+          <img src="assets/Gallery/Photos/14.jpg" alt="Client 14" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/15.jpg')">
+          <img src="assets/Gallery/Photos/15.jpg" alt="Client 15" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/16.jpg')">
+          <img src="assets/Gallery/Photos/16.jpg" alt="Client 16" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/17.jpg')">
+          <img src="assets/Gallery/Photos/17.jpg" alt="Client 17" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/18.jpg')">
+          <img src="assets/Gallery/Photos/18.jpg" alt="Client 18" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/19.jpg')">
+          <img src="assets/Gallery/Photos/19.jpg" alt="Client 19" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/20.jpg')">
+          <img src="assets/Gallery/Photos/20.jpg" alt="Client 20" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/21.jpg')">
+          <img src="assets/Gallery/Photos/21.jpg" alt="Client 21" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/22.jpg')">
+          <img src="assets/Gallery/Photos/22.jpg" alt="Client 22" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <button onclick="openModal('assets/Gallery/Photos/23.jpg')">
+          <img src="assets/Gallery/Photos/23.jpg" alt="Client 23" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="absolute top-1/2 left-4 transform -translate-y-1/2 flex items-center space-x-2 animate-bounce bg-pink-600/80 text-white px-3 py-1 rounded-full shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H4"/>
+    </svg>
+    <span class="font-semibold drop-shadow-md">Swipe</span>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section id="videos" class="py-20 bg-pink-100 relative">
+  <h2 class="text-4xl font-bold text-black text-center mb-10">
+    Happy Clients Videos
+  </h2>
+  <div class="overflow-x-auto scrollbar-hide px-6">
+    <div class="flex space-x-6 w-max pb-4">
+      <!-- Videos -->
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <video controls class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+          <source src="assets/Gallery/Videos/1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <video controls class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+          <source src="assets/Gallery/Videos/2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+        <video controls class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
+          <source src="assets/Gallery/Videos/3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Add more videos as needed -->
+    </div>
+  </div>
+  <div class="absolute top-1/2 left-4 transform -translate-y-1/2 flex items-center space-x-2 animate-bounce bg-pink-600/80 text-white px-3 py-1 rounded-full shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H4"/>
+    </svg>
+    <span class="font-semibold drop-shadow-md">Swipe</span>
+  </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+  <span class="absolute top-5 right-8 text-red-500 text-6xl font-bold cursor-pointer hover:text-red-700 transition" onclick="closeModal()">&times;</span>
+  <img id="modalImage" src="" class="max-w-4xl max-h-[90vh] rounded-lg shadow-2xl">
+</div>
+
+<script>
+  function openModal(src) {
+    document.getElementById("modalImage").src = src;
+    document.getElementById("imageModal").classList.remove("hidden");
+    document.getElementById("imageModal").classList.add("flex");
+  }
+  function closeModal() {
+    document.getElementById("imageModal").classList.add("hidden");
+    document.getElementById("imageModal").classList.remove("flex");
+  }
+</script>
+
+
+
+
+
+
+  <section id="services" class="py-20 bg-pink-300 "> 
+  <div class="container mx-auto text-center"> 
+    <h2 class="text-4xl font-bold  section-title">Our Services</h2> 
+    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3"> 
+
+      <div class="bg-pink-200 p-8 rounded-xl shadow-lg  transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Bridal Makeup</h3> 
+        <p class="text-gray italic">Timeless glam crafted to make you feel like royalty. Packages available for Premium, Elite, and Luxury.</p> 
+      </div> 
+
+      <div class="bg-pink-200 p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-semibold  text-pink-600 mb-3">Pre-Wedding & Engagement</h3> 
+        <p class="text-gray italic">Soft, natural glam for pre-wedding photoshoots and dreamy looks for your ring ceremony.</p> 
+      </div> 
+
+
+      <div class="bg-pink-200 p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Party & Occasion Makeup</h3> 
+        <p class="text-gray italic">From elegant party makeup to bold cocktail and sangeet looks, perfect for any celebration.</p> 
+      </div> 
+
+
+      <div class="bg-pink-200 p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Photoshoot & Editorial</h3> 
+        <p class="text-gray italic">Sophisticated, camera-ready looks for fashion, pre-wedding, and editorial shoots.</p> 
+      </div> 
+
+
+      <div class="bg-pink-200 p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Family & Guests</h3> 
+        <p class="text-gray italic">Flawless makeup for family members and guests attending your special event.</p> 
+      </div> 
+
+
+      <div class="bg-pink-200 p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Makeup Lessons</h3> 
+        <p class="text-gray italic">Personalized one-on-one sessions to master essential makeup techniques.</p> 
+      </div> 
+    </div> 
+  </div> 
+</section> 
+
+
+<section id="pricing" class="py-20 bg-pink-200 "> 
+  <div class="container mx-auto text-center transform transition duration-300 hover:scale-104"> 
+    <h2 class="text-4xl font-bold text-gray section-title">Pricing & Packages</h2> 
+    <p class="text-lg text-gray mb-12 max-w-2xl mx-auto"> 
+      Explore our curated packages designed to suit your style and celebration. Please note prices may vary depending on brand choice. 
+    </p> 
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"> 
+
+      <div class="bg-pink-300 p-12 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-bold text-pink-600 mb-4">Bridal Makeup</h3> 
+        <p class="text-gray-700 italic mb-6 font-family">Timeless glam for your big day, making you feel like royalty.</p> 
+        <ul class="text-left text-gray text-center"> 
+          <li><strong>Premium:</strong> ₹25,000</li> 
+          <li><strong>Elite:</strong> ₹35,000</li> 
+          <li><strong>Luxury:</strong> ₹50,000</li> 
+        </ul> 
+      </div> 
+
+
+      <div class="bg-pink-300 p-12 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-bold text-pink-600 mb-4">Engagement</h3> 
+        <p class="text-gray-700 italic mb-6 font-family">A dreamy look that makes you glow for your ring ceremony.</p> 
+        <ul class="text-left text-gray text-center"> 
+          <li><strong>Premium:</strong> ₹15,000</li> 
+          <li><strong>Elite:</strong> ₹18,000</li> 
+          <li><strong>Luxury :</strong> ₹25,000</li> 
+        </ul> 
+      </div> 
+
+
+      <div class="bg-pink-300 p-10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-bold text-pink-600 mb-4">Reception</h3> 
+        <p class="text-gray-700 italic mb-6 font-family">A flawless, regal look to end your wedding celebrations in style..</p> 
+        <ul class="text-left text-gray text-center"> 
+          <li><strong> Premium:</strong> ₹18,000</li> 
+          <li><strong> Elite:</strong> ₹25,000</li> 
+          <li><strong>Luxury:</strong> ₹35,000</li> 
+        </ul> 
+      </div> 
+
+
+      <div class="bg-pink-300 p-12 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105"> 
+        <h3 class="text-2xl font-bold text-pink-600 mb-4">Pre Wedding Makeup</h3> 
+        <p class="text-gray-700 italic mb-6 font-family">Soft & natural glam for photo shoots and casual ceremonies..</p> 
+        <ul class="text-left text-gray text-center"> 
+          <li><strong>Premium:</strong> ₹9,000</li> 
+          <li><strong>Elite:</strong> ₹12,000</li> 
+        </ul> 
+      </div> 
+
+
+            <div class="bg-pink-300 p-12 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105"> 
+              <h3 class="text-2xl font-bold text-pink-600 mb-4">Haldi & Mehndi Makeup</h3> 
+              <p class="text-gray-700 italic mb-6 font-family">Traditional yet stylish glam to match the colorful vibes of Mehndi..</p> 
+              <ul class="text-left text-gray text-center"> 
+                <li><strong>Premium:</strong> ₹8,000</li> 
+                <li><strong>Elite:</strong> ₹12,000</li> 
+              </ul> 
+            </div> 
+
+            <div class="bg-pink-300 p-12 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105"> 
+              <h3 class="text-2xl font-bold text-pink-600 mb-4">cocktail & sangeet </h3> 
+              <p class="text-gray-700 italic mb-6 font-family">Bold, glamorous looks perfect for dancing the night away..</p> 
+              <ul class="text-left text-gray text-center"> 
+                <li><strong>Premium:</strong> ₹10,000</li> 
+                <li><strong>Elite:</strong> ₹15,000</li> 
+                <li><strong>Luxury:</strong> ₹20,000</li> 
+              </ul> 
+            </div> 
+    </div> 
+  </div> 
+</section> 
+
+
+<section id="terms" class="py-20 bg-pink-200">
+  <div class="container mx-auto text-center max-w-5xl">
+    <h2 class="text-4xl font-bold text-pink-600 mb-8">Booking Terms & Policies</h2>
+    <div class="bg-pink-100 p-10 rounded-2xl shadow-lg text-left space-y-10">
+
+
+      <div>
+        <h3 class="text-2xl font-semibold text-black mb-4">Booking Terms</h3>
+        <ul class="list-decimal list-inside text-gray space-y-3">
+          <li><span class="font-bold text-pink-600">Advance Payment:</span> To confirm your booking, a 50% advance payment of the selected package is required. This ensures that your date is reserved exclusively for you.</li>
+          <li><span class="font-bold text-pink-600">Balance Payment:</span> The remaining amount should be paid on the day of your event, before the service begins.</li>
+          <li><span class="font-bold text-pink-600">Cancellations:</span> Please note all bookings are non-refundable. we recommend confirming your dates carefully to avoid inconvenience.</li>
+          <li><span class="font-bold text-pink-600">Rescheduling:</span> In case you need to reschedule, please Inform us at least 7 days in advance . Rescheduling is subject to the availability of the makeup artist on the new date .</li>
+          <li><span class="font-bold text-pink-600">Additional Services:</span>Any last-minute requests, changes, or extra services will incur additional charges.</li>
+          <li><span class="font-bold text-pink-600">Client Preparation:</span> Please ensure a clean and comfortable space for the makeup session. A well-lit area with a mirror is highly recommended for best results.</li>
+          <li><span class="font-bold text-pink-600">Professional Care:</span> Our team use high-quality, professional products for all services.we strive to make every look flawless, keeping your comfort and safety in mind.</li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h3 class="text-2xl font-semibold text-black mb-4">Travel & Outstation Booking</h3>
+        <ul class="list-decimal list-inside text-gray space-y-3">
+          <li><span class="font-bold text-pink-600">Travel Charges:</span> For bookings outside the city or requiring travel, additional charges may apply. These will be communicated and agreed upon at the time of booking.</li>
+          <li><span class="font-bold text-pink-600">Accommodation:</span> For outstation events requiring overnight stay is needed for makeup artist, the client must provide or arrange suitable accommodation.</li>
+          <li><span class="font-bold text-pink-600">Travel Time:</span> Travel time is calculated separately and may be included in the service hours.</li>
+          <li><span class="font-bold text-pink-600">Advance & Confirmation:</span> A 50% advance is required to confirm the booking, including travel and accommodation costs (if applicable).</li>
+          <li><span class="font-bold text-pink-600">Cancellation / Rescheduling:</span> Outstation bookings follow the same cancellation and rescheduling policy as local bookings.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="testimonials" class="py-20 bg-pink-200 relative">
+  <div class="text-center">
+    <h2 class="text-4xl font-bold text-gray-800 section-title">Rave Reviews</h2>
+
+
+    <div class="mt-12 overflow-x-auto w-screen">
+      <div class="flex space-x-6 pb-6 snap-x snap-mandatory w-max">
+      
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"I absolutely loved my makeup! It was flawless, long-lasting, and made me feel so beautiful on my special day. Thank you!"</p>
+          <p class="mt-4 font-semibold text-black">~ Bride Sonali</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Super happy with my makeup! It looked so natural yet glamorous and stayed perfect all day."</p>
+          <p class="mt-4 font-semibold text-black">- Bride Vagisha</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"The makeup was just perfect – exactly what I wanted! It enhanced my features beautifully and lasted throughout the event. Highly recommended!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Shivani</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Loved my makeup! It was elegant, flawless, and made me feel confident all day. Thank you for the wonderful work!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Anjali</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"My look was exactly how I dreamed – fresh, radiant, and picture-perfect. Truly professional and caring!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Ashmita</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Very satisfied with my makeup! It was done beautifully, stayed all day, and made me feel so special. Thank you so much!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Abha</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"So happy with my makeup! It looked stunning, stayed flawless all day, and made me feel truly confident. Thank you for your amazing work!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Mona</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Perfect makeup service! My look was elegant, polished, and lasted without any touch-ups. Very professional and talented!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Manisha</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"The makeup was just beautiful! It enhanced my natural features and stayed fresh all day. Very happy with the service!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Sweta</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Extremely pleased with my makeup! It was exactly what I wanted – flawless, natural, and long-lasting. Thank you for the wonderful work!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Suman</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"In love with my makeup! It looked so elegant and stayed perfect from morning till night. Thank you✨💖"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Priya</p>
+        </div>
+
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Beautiful makeup, exactly how I imagined! It was long-lasting, well-blended, and made me feel so confident. Thank you so much!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Shruti</p>
+        </div>
+
+        <div class="bg-pink-300 p-8 rounded-2xl shadow-lg w-80 flex-shrink-0 snap-start">
+          <p class="text-gray italic">"Absolutely loved my bridal makeup! It was perfectly done, stayed all day, and made me feel so special. Thank you for your great work!"</p>
+          <p class="mt-4 font-semibold text-black">- Bride Ayushi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="py-20 px-6 bg-pink-100"> 
+  <div class="container mx-auto text-center max-w-3xl"> 
+    <h2 class="text-4xl font-bold text-gray-800 section-title">Let's Connect</h2> 
+    <p class="text-lg text-gray-600 mb-8"> 
+      Ready to book your special day or have a question? Reach out to us directly. 
+    </p> 
+    <div class="space-y-4"> 
+      <a href="tel:+918825219706" class="flex items-center justify-center space-x-2 text-pink-600 hover:text-amber-700 transition duration-300 p-4 bg-pink-200 rounded-full shadow-sm"> 
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> 
+        </svg> 
+        <span>+91 8825219706</span> 
+      </a> 
+
+      <a href="mailto:glittersdairy@gmail.com" class="flex items-center justify-center space-x-2 text-pink-600 hover:text-amber-700 transition duration-300 p-4 bg-pink-200 rounded-full shadow-sm"> 
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> 
+        </svg> 
+        <span>glittersdairy@gmail.com</span> 
+      </a> 
+
+      <a href="https://www.instagram.com/_glitterdiary_/" class="flex items-center justify-center space-x-2 text-pink-600 hover:text-amber-700 transition duration-300 p-4 bg-pink-200 rounded-full shadow-sm"> 
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3 15h6V9H9v8zm3-10a2 2 0 11-4 0 2 2 0 014 0zm0 0h.01M16 12a4 4 0 11-8 0 4 4 0 018 0z" /> 
+        </svg> 
+        <span>@_glitterdiary_</span> 
+      </a> 
+    </div> 
+  </div> 
+</section> 
+
+
+<footer class="bg-pink-500 text-white py-6 text-center"> 
+  <p>&copy; 2025 Glitter Diary. All rights reserved.</p> 
+</footer> 
+</body> 
+</html>

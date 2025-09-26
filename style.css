@@ -1,0 +1,228 @@
+/* ===================================== */
+/* General Styles */
+/* ===================================== */
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===================================== */
+/* Navbar */
+/* ===================================== */
+nav ul li a {
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #ec4899; /* Tailwind pink-500 */
+}
+
+/* ===================================== */
+/* Hero Section */
+/* ===================================== */
+.hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ===================================== */
+/* Portfolio / Gallery Section */
+/* ===================================== */
+.portfolio {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fceefc;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+/* Horizontal Scroll Container */
+.portfolio-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ff007f #fceefc;
+}
+
+.portfolio-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.portfolio-scroll::-webkit-scrollbar-thumb {
+  background: #ff007f;
+  border-radius: 10px;
+}
+
+.portfolio-scroll img {
+  flex: 0 0 auto;
+  width: 280px;   
+  height: 350px;  
+  object-fit: cover;  
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-scroll img:hover {
+  transform: scale(1.05);
+}
+
+/* ===================================== */
+/* Services Cards */
+/* ===================================== */
+#services .bg-white {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#services .bg-white:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===================================== */
+/* Pricing Cards */
+/* ===================================== */
+#pricing .bg-white {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#pricing .bg-white:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===================================== */
+/* Testimonials Scroll */
+/* ===================================== */
+#testimonials .flex {
+  scroll-behavior: smooth;
+}
+#testimonials .bg-pink-300 {
+  transition: transform 0.3s ease;
+}
+#testimonials .bg-pink-300:hover {
+  transform: rotate(-1deg) scale(1.05);
+}
+
+/* ===================================== */
+/* Scrollbar Hide Utility */
+/* ===================================== */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
+/* ===================================== */
+/* Contact Section */
+/* ===================================== */
+#contact a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#contact a:hover {
+  color: #ec4899;
+  transform: scale(1.1);
+}
+
+/* ===================================== */
+/* Footer */
+/* ===================================== */
+footer {
+  letter-spacing: 1px;
+}
+
+/* ===================================== */
+/* Image / Video Modal */
+/* ===================================== */
+#imageModal {
+  display: none; 
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+#imageModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+#imageModal span {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #ff4d6d;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#imageModal span:hover {
+  color: #ff1a3c;
+}
+
+/* ===================================== */
+/* Videos / Gallery Horizontal Scroll */
+/* ===================================== */
+.scroll-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-container > div {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.scroll-container img {
+  width: 16rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.scroll-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Swipe indicator animation */
+.swipe-indicator {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 105, 180, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  color: white;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(10px); }
+}
