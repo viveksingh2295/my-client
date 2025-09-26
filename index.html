@@ -1,43 +1,43 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Glitter Diary</title> 
-  <script src="https://cdn.tailwindcss.com"></script> 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glitter Diary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
 <body style="font-family: 'Poppins', sans-serif;">
-  ...
-</body>
+  
+  <!-- ✅ NAVIGATION (inside body) -->
+  <nav class="fixed w-full top-0 left-0 bg-pink-200 shadow z-50">
+    <div class="container mx-auto flex justify-between items-center py-4">
+      <h1 class="text-2xl font-bold text-pink-600">Glitter Diary</h1>
+      <ul class="hidden md:flex space-x-3">
+        <li><a href="#home" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Home</a></li>
+        <li><a href="#about" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">About</a></li>
+        <li><a href="#Gallery" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
+        <li><a href="#services" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Services</a></li>
+        <li><a href="#contact" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
+      </ul>
 
-<nav class="fixed w-full top-0 left-0 bg-pink-200 shadow z-50">
-  <div class="container mx-auto flex justify-between items-center  py-4">
-    <h1 class="text-2xl font-bold text-pink-600 ">Glitter Diary</h1>
-    <ul class="hidden md:flex space-x-3">
-      <li><a href="#home" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Home</a></li>
-      <li><a href="#about" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">About</a></li>
-      <li><a href="#Gallery" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
-      <li><a href="#videos" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Videos</a></li>
-      <li><a href="#services" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Services</a></li>
-      <li><a href="#contact" class="hover:text-pink text-bold p-3 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
+      <button id="menu-btn" class="md:hidden text-pink-600 text-3xl focus:outline-none">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="hidden flex-col space-y-2 bg-pink-100 px-6 py-4 md:hidden">
+      <li><a href="#home" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Home</a></li>
+      <li><a href="#about" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">About</a></li>
+      <li><a href="#Gallery" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
+      <li><a href="#services" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Services</a></li>
+      <li><a href="#contact" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
     </ul>
+  </nav>
 
-    <button id="menu-btn" class="md:hidden text-pink text-3xl focus:outline-none">
-      ☰
-    </button>
-  </div>
-
-  <ul id="mobile-menu" class="hidden flex-col space-y-2 bg-pink-100 px-6 py-4 md:hidden">
-    <li><a href="#home" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Home</a></li>
-    <li><a href="#about" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">About</a></li>
-    <li><a href="#Gallery" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
-    <li><a href="#videos" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Videos</a></li>
-    <li><a href="#services" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Services</a></li>
-    <li><a href="#contact" class="hover:text-pink text-lg text-bold p-4 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
-  </ul>
-</nav>
 
 <script>
   const menuBtn = document.getElementById("menu-btn");
