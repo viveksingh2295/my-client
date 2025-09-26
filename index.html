@@ -115,6 +115,64 @@
     </div>
   </section>
 
+  <!-- VIDEOS SECTION -->
+<section id="videos" class="py-20 bg-pink-200 relative">
+  <h2 class="text-4xl font-bold text-black text-center mb-10">Watch Our Work</h2>
+
+  <div class="overflow-x-auto px-6 scroll-container flex space-x-6">
+    <!-- Sample videos -->
+    <div>
+      <button onclick="openVideoModal('assets/Videos/1.mp4')">
+        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Videos/1.mp4" muted></video>
+      </button>
+    </div>
+    <div>
+      <button onclick="openVideoModal('assets/Videos/2.mp4')">
+        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Videos/2.mp4" muted></video>
+      </button>
+    </div>
+    <div>
+      <button onclick="openVideoModal('assets/Videos/3.mp4')">
+        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Videos/3.mp4" muted></video>
+      </button>
+    </div>
+    <!-- Add more videos in the same pattern -->
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-90 items-center justify-center z-50">
+    <span onclick="closeVideoModal()" class="absolute top-4 right-6 text-white text-3xl cursor-pointer">&times;</span>
+    <video id="modalVideo" src="" controls class="max-w-4xl max-h-[80vh] rounded-lg shadow-lg"></video>
+  </div>
+</section>
+
+<script>
+  // Video Modal
+  function openVideoModal(src) {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    modalVideo.src = src;
+    modal.classList.remove("hidden");
+    modal.style.display = "flex";
+    modalVideo.play();
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    modalVideo.pause();
+    modalVideo.src = "";
+    modal.classList.add("hidden");
+    modal.style.display = "none";
+  }
+
+  // Close modal by clicking outside video
+  document.getElementById("videoModal").addEventListener("click", (e) => {
+    if (e.target.id === "videoModal") closeVideoModal();
+  });
+</script>
+
+
 
   <section id="services" class="py-20 bg-pink-300 "> 
   <div class="container mx-auto text-center"> 
