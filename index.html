@@ -13,40 +13,27 @@
 </head>
 <body style="font-family: 'Poppins', sans-serif;">
   
-  <!-- ✅ NAVIGATION (inside body) -->
-  <nav class="fixed w-full top-0 left-0 bg-pink-200 shadow z-50">
-    <div class="container mx-auto flex justify-between items-center py-4">
-      <h1 class="text-2xl font-bold text-pink-600">Glitter Diary</h1>
-      <ul class="hidden md:flex space-x-3">
-        <li><a href="#home" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Home</a></li>
-        <li><a href="#about" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">About</a></li>
-        <li><a href="#Gallery" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
-        <li><a href="#services" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Services</a></li>
-        <li><a href="#contact" class="hover:text-pink-600 font-bold p-3 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
-      </ul>
-
-      <button id="menu-btn" class="md:hidden text-pink-600 text-3xl focus:outline-none">☰</button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <ul id="mobile-menu" class="hidden flex-col space-y-2 bg-pink-100 px-6 py-4 md:hidden">
-      <li><a href="#home" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Home</a></li>
-      <li><a href="#about" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">About</a></li>
-      <li><a href="#Gallery" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Gallery</a></li>
-      <li><a href="#services" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Services</a></li>
-      <li><a href="#contact" class="hover:text-pink-600 text-lg font-bold p-4 bg-pink-100 rounded-full shadow-sm">Contact</a></li>
+  <!-- NAVBAR -->
+<nav class="fixed w-full top-0 left-0 bg-pink-200 shadow z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-0">
+    <h1 class="text-2xl font-bold text-pink-600">Glitter Diary</h1>
+    <ul class="hidden md:flex space-x-3">
+      <li><a href="#home" class="p-3 rounded-full bg-pink-100 shadow-sm font-bold">Home</a></li>
+      <li><a href="#about" class="p-3 rounded-full bg-pink-100 shadow-sm font-bold">About</a></li>
+      <li><a href="#Gallery" class="p-3 rounded-full bg-pink-100 shadow-sm font-bold">Gallery</a></li>
+      <li><a href="#services" class="p-3 rounded-full bg-pink-100 shadow-sm font-bold">Services</a></li>
+      <li><a href="#contact" class="p-3 rounded-full bg-pink-100 shadow-sm font-bold">Contact</a></li>
     </ul>
-  </nav>
-
-
-<script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
+    <button id="menu-btn" class="md:hidden text-3xl text-pink-600 focus:outline-none">☰</button>
+  </div>
+  <ul id="mobile-menu" class="hidden flex-col space-y-2 bg-pink-100 px-6 py-4 md:hidden">
+    <li><a href="#home" class="p-4 rounded-full bg-pink-100 shadow-sm block text-center font-bold">Home</a></li>
+    <li><a href="#about" class="p-4 rounded-full bg-pink-100 shadow-sm block text-center font-bold">About</a></li>
+    <li><a href="#Gallery" class="p-4 rounded-full bg-pink-100 shadow-sm block text-center font-bold">Gallery</a></li>
+    <li><a href="#services" class="p-4 rounded-full bg-pink-100 shadow-sm block text-center font-bold">Services</a></li>
+    <li><a href="#contact" class="p-4 rounded-full bg-pink-100 shadow-sm block text-center font-bold">Contact</a></li>
+  </ul>
+</nav>
 
 <section id="home" class="hero h-screen flex items-center justify-center text-center py-20 px-10 bg-pink-300" style="background-image: url('assets/images/rounak\ logo.png');background-position:bottom; background-size: 100%;"> 
   <div> 
@@ -81,130 +68,25 @@
   </div> 
 </section> 
 
-  <!-- Gallery Section -->
-  <section id="Gallery" class="py-20 bg-pink-100 relative">
-    <h2 class="text-4xl font-bold text-black text-center mb-10">
-      Happy Clients
-    </h2>
-    <div class="overflow-x-auto scrollbar-hide px-6">
-      <div class="flex space-x-6 w-max pb-4">
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/1.jpg')">
-            <img src="assets/Gallery/Photos/1.jpg" alt="Client 1" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/2.jpg')">
-            <img src="assets/Gallery/Photos/2.jpg" alt="Client 2" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/3.jpg')">
-            <img src="assets/Gallery/Photos/3.jpg" alt="Client 3" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/4.jpg')">
-            <img src="assets/Gallery/Photos/4.jpg" alt="Client 4" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/5.jpg')">
-            <img src="assets/Gallery/Photos/5.jpg" alt="Client 5" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/6.jpg')">
-            <img src="assets/Gallery/Photos/6.jpg" alt="Client 6" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/7.jpg')">
-            <img src="assets/Gallery/Photos/7.jpg" alt="Client 7" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/8.jpg')">
-            <img src="assets/Gallery/Photos/8.jpg" alt="Client 8" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/9.jpg')">
-            <img src="assets/Gallery/Photos/9.jpg" alt="Client 9" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/10.jpg')">
-            <img src="assets/Gallery/Photos/10.jpg" alt="Client 10" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/11.jpg')">
-            <img src="assets/Gallery/Photos/11.jpg" alt="Client 11" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/12.jpg')">
-            <img src="assets/Gallery/Photos/12.jpg" alt="Client 12" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/13.jpg')">
-            <img src="assets/Gallery/Photos/13.jpg" alt="Client 13" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/14.jpg')">
-            <img src="assets/Gallery/Photos/14.jpg" alt="Client 14" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/15.jpg')">
-            <img src="assets/Gallery/Photos/15.jpg" alt="Client 15" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/16.jpg')">
-            <img src="assets/Gallery/Photos/16.jpg" alt="Client 16" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/17.jpg')">
-            <img src="assets/Gallery/Photos/17.jpg" alt="Client 17" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/18.jpg')">
-            <img src="assets/Gallery/Photos/18.jpg" alt="Client 18" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/19.jpg')">
-            <img src="assets/Gallery/Photos/19.jpg" alt="Client 19" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/20.jpg')">
-            <img src="assets/Gallery/Photos/20.jpg" alt="Client 20" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/21.jpg')">
-            <img src="assets/Gallery/Photos/21.jpg" alt="Client 21" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/22.jpg')">
-            <img src="assets/Gallery/Photos/22.jpg" alt="Client 22" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-lg flex-shrink-0">
-          <button onclick="openModal('assets/Gallery/Photos/23.jpg')">
-            <img src="assets/Gallery/Photos/23.jpg" alt="Client 23" class="w-64 h-80 object-cover hover:scale-105 transition duration-200">
-          </button>
-        </div>
-      </div>
-    </div>
+  <!-- GALLERY -->
+<section id="Gallery" class="py-20 bg-pink-100 relative">
+  <h2 class="text-4xl font-bold text-black text-center mb-10">Happy Clients</h2>
+  <div class="overflow-x-auto scrollbar-hide px-6 scroll-container">
+    <!-- Sample images -->
+    <div><button onclick="openModal('assets/Gallery/Photos/1.jpg')"><img src="assets/Gallery/Photos/1.jpg" alt=""></button></div>
+    <div><button onclick="openModal('assets/Gallery/Photos/2.jpg')"><img src="assets/Gallery/Photos/2.jpg" alt=""></button></div>
+    <div><button onclick="openModal('assets/Gallery/Photos/3.jpg')"><img src="assets/Gallery/Photos/3.jpg" alt=""></button></div>
+    <div><button onclick="openModal('assets/Gallery/Photos/4.jpg')"><img src="assets/Gallery/Photos/4.jpg" alt=""></button></div>
+    <div><button onclick="openModal('assets/Gallery/Photos/5.jpg')"><img src="assets/Gallery/Photos/5.jpg" alt=""></button></div>
+    <div><button onclick="openModal('assets/Gallery/Photos/6.jpg')"><img src="assets/Gallery/Photos/6.jpg" alt=""></button></div>
+  </div>
+</section>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="hidden">
+  <span onclick="closeModal()">&times;</span>
+  <img id="modalImage" src="">
+</div>
 
     <!-- Floating "Swipe" Hint -->
     <div class="absolute top-1/2 left-4 transform -translate-y-1/2 flex items-center space-x-2 animate-bounce 
@@ -500,69 +382,30 @@
 
 <script>
   // Mobile Menu
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
-
-  // Smooth Scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      if(!menu.classList.contains('hidden')) menu.classList.add('hidden');
-    });
-  });
-
-  // Active Navbar Highlight
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav ul li a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 90;
-      if(pageYOffset >= sectionTop) current = section.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('bg-pink-500','text-white');
-      link.classList.add('bg-pink-100','text-black');
-      if(link.getAttribute('href') === `#${current}`){
-        link.classList.add('bg-pink-500','text-white');
-        link.classList.remove('bg-pink-100','text-black');
-      }
-    });
-  });
-
-  // Testimonials Slider
-  const slides = document.getElementById('testimonialSlides');
-  const totalSlides = slides.children.length;
-  let index = 0;
-  document.getElementById('nextTestimonial').addEventListener('click', () => {
-    index = (index + 1) % totalSlides;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  });
-  document.getElementById('prevTestimonial').addEventListener('click', () => {
-    index = (index - 1 + totalSlides) % totalSlides;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  });
-  let startX = 0;
-  slides.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-  slides.addEventListener('touchend', e => {
-    const endX = e.changedTouches[0].clientX;
-    if(startX - endX > 50){ index = (index + 1) % totalSlides; }
-    else if(endX - startX > 50){ index = (index - 1 + totalSlides) % totalSlides; }
-    slides.style.transform = `translateX(-${index * 100}%)`;
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
   });
 
   // Gallery Modal
-  function openModal(src){
-    document.getElementById('modalImage').src = src;
-    document.getElementById('imageModal').classList.remove('hidden');
-    document.getElementById('imageModal').classList.add('flex');
+  function openModal(src) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = src;
+    modal.classList.remove("hidden");
+    modal.style.display = "flex";
   }
-  function closeModal(){
-    document.getElementById('imageModal').classList.add('hidden');
-    document.getElementById('imageModal').classList.remove('flex');
+  function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.classList.add("hidden");
+    modal.style.display = "none";
   }
+
+  // Close modal by clicking outside image
+  document.getElementById("imageModal").addEventListener("click", (e) => {
+    if (e.target.id === "imageModal") closeModal();
+  });
 </script>
 </body> 
 </html>
