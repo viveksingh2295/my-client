@@ -216,30 +216,6 @@
     </div>
   </section>
 
-  <!-- Fullscreen Modal -->
-  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
-    <span class="absolute top-5 right-8 text-red-500 text-4xl cursor-pointer" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" class="max-w-5xl max-h-[90vh] rounded-lg shadow-2xl">
-  </div>
-
-  <script>
-    document.getElementById("menu-btn").addEventListener("click", () => {
-      document.getElementById("mobile-menu").classList.toggle("hidden");
-    });
-    function openModal(src) {
-      document.getElementById("modalImage").src = src;
-      document.getElementById("imageModal").classList.remove("hidden");
-      document.getElementById("imageModal").classList.add("flex");
-    }
-    function closeModal() {
-      document.getElementById("imageModal").classList.add("hidden");
-      document.getElementById("imageModal").classList.remove("flex");
-    }
-  </script>
-
-
-
-
 
   <section id="services" class="py-20 bg-pink-300 "> 
   <div class="container mx-auto text-center"> 
@@ -519,6 +495,74 @@
 
 <footer class="bg-pink-500 text-white py-6 text-center"> 
   <p>&copy; 2025 Glitter Diary. All rights reserved.</p> 
-</footer> 
+</footer>
+
+!-- Scripts -->
+<script>
+  // Mobile Menu
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      if(!menu.classList.contains('hidden')) menu.classList.add('hidden');
+    });
+  });
+
+  // Active Navbar Highlight
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 90;
+      if(pageYOffset >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('bg-pink-500','text-white');
+      link.classList.add('bg-pink-100','text-black');
+      if(link.getAttribute('href') === `#${current}`){
+        link.classList.add('bg-pink-500','text-white');
+        link.classList.remove('bg-pink-100','text-black');
+      }
+    });
+  });
+
+  // Testimonials Slider
+  const slides = document.getElementById('testimonialSlides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+  document.getElementById('nextTestimonial').addEventListener('click', () => {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+  document.getElementById('prevTestimonial').addEventListener('click', () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+  let startX = 0;
+  slides.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+  slides.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    if(startX - endX > 50){ index = (index + 1) % totalSlides; }
+    else if(endX - startX > 50){ index = (index - 1 + totalSlides) % totalSlides; }
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  // Gallery Modal
+  function openModal(src){
+    document.getElementById('modalImage').src = src;
+    document.getElementById('imageModal').classList.remove('hidden');
+    document.getElementById('imageModal').classList.add('flex');
+  }
+  function closeModal(){
+    document.getElementById('imageModal').classList.add('hidden');
+    document.getElementById('imageModal').classList.remove('flex');
+  }
+</script>
 </body> 
 </html>
