@@ -101,3 +101,21 @@ footer { letter-spacing: 1px; }
   0%, 100% { transform: translateY(-50%) translateX(0); }
   50% { transform: translateY(-50%) translateX(10px); }
 }
+/* Smooth horizontal scroll for gallery & videos */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem; /* space between items */
+}
+
+/* Hide scrollbar (optional) */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.scroll-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
