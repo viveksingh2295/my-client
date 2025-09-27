@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,63 +116,59 @@
     </div>
   </section>
 
-  <!-- VIDEOS SECTION -->
+<!-- VIDEOS SECTION -->
 <section id="videos" class="py-20 bg-pink-200 relative">
   <h2 class="text-4xl font-bold text-black text-center mb-10">Watch Our Work</h2>
 
   <div class="overflow-x-auto px-6 scroll-container flex space-x-6">
-    <!-- Sample videos -->
-    <div>
-      <button onclick="openVideoModal('assets/Videos/1.mp4')">
-        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Videos/1.mp4" muted></video>
+    <!-- Video 1 -->
+    <div class="relative group">
+      <button onclick="openVideoModal('assets/Gallery/videos/1.mp4')" class="relative">
+        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Gallery/videos/1.mp4" muted></video>
+        <!-- Play Icon -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-black bg-opacity-50 rounded-full p-4 group-hover:scale-110 transition-transform">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
       </button>
     </div>
-    <div>
-      <button onclick="openVideoModal('assets/Videos/2.mp4')">
-        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Videos/2.mp4" muted></video>
+
+    <!-- Video 2 -->
+    <div class="relative group">
+      <button onclick="openVideoModal('assets/Gallery/videos/2.mp4')" class="relative">
+        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Gallery/videos/2.mp4" muted></video>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-black bg-opacity-50 rounded-full p-4 group-hover:scale-110 transition-transform">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
       </button>
     </div>
-    <div>
-      <button onclick="openVideoModal('assets/Videos/3.mp4')">
-        <video class="w-96 h-56 object-cover rounded-lg shadow-lg" src="assets/Videos/3.mp4" muted></video>
-      </button>
-    </div>
-    <!-- Add more videos in the same pattern -->
+    
+    <!-- Add more videos here... -->
   </div>
 
-  <!-- VIDEO MODAL -->
+  <!-- VIDEO MODAL (same as before) -->
   <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-90 items-center justify-center z-50">
     <span onclick="closeVideoModal()" class="absolute top-4 right-6 text-white text-3xl cursor-pointer">&times;</span>
     <video id="modalVideo" src="" controls class="max-w-4xl max-h-[80vh] rounded-lg shadow-lg"></video>
   </div>
+
+
+    <!-- Floating "Swipe" Hint -->
+    <div class="absolute top-1/2 left-4 transform -translate-y-1/2 flex items-center space-x-2 animate-bounce 
+                bg-pink-600/80 text-white px-3 py-1 rounded-full shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H4"/>
+      </svg>
+      <span class="font-semibold drop-shadow-md">Swipe</span>
+    </div>
 </section>
-
-<script>
-  // Video Modal
-  function openVideoModal(src) {
-    const modal = document.getElementById("videoModal");
-    const modalVideo = document.getElementById("modalVideo");
-    modalVideo.src = src;
-    modal.classList.remove("hidden");
-    modal.style.display = "flex";
-    modalVideo.play();
-  }
-
-  function closeVideoModal() {
-    const modal = document.getElementById("videoModal");
-    const modalVideo = document.getElementById("modalVideo");
-    modalVideo.pause();
-    modalVideo.src = "";
-    modal.classList.add("hidden");
-    modal.style.display = "none";
-  }
-
-  // Close modal by clicking outside video
-  document.getElementById("videoModal").addEventListener("click", (e) => {
-    if (e.target.id === "videoModal") closeVideoModal();
-  });
-</script>
-
 
 
   <section id="services" class="py-20 bg-pink-300 "> 
@@ -481,6 +478,30 @@
   document.getElementById("imageModal").addEventListener("click", (e) => {
     if (e.target.id === "imageModal") closeModal();
   });
+  // Video Modal
+  function openVideoModal(src) {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    modalVideo.src = src;
+    modal.classList.remove("hidden");
+    modal.style.display = "flex";
+    modalVideo.play();
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    modalVideo.pause();
+    modalVideo.src = "";
+    modal.classList.add("hidden");
+    modal.style.display = "none";
+  }
+
+  // Close modal by clicking outside video
+  document.getElementById("videoModal").addEventListener("click", (e) => {
+    if (e.target.id === "videoModal") closeVideoModal();
+  });
+
 </script>
 </body> 
 </html>
