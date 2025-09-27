@@ -1,121 +1,121 @@
 /* ================= General ================= */
 body {
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-}
-html { scroll-behavior: smooth; }
-
-/* ================= Navbar ================= */
-nav ul li a {
-  transition: color 0.3s ease;
-}
-nav ul li a:hover {
-  color: #ec4899;
-}
-
-/* ================= Hero ================= */
-.hero {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* ================= Portfolio / Gallery ================= */
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  html { scroll-behavior: smooth; }
+  
+  /* ================= Navbar ================= */
+  nav ul li a {
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #ec4899;
+  }
+  
+  /* ================= Hero ================= */
+  .hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* ================= Portfolio / Gallery ================= */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scroll-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-container > div {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  .scroll-container img {
+    width: 16rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .scroll-container img:hover { transform: scale(1.05); }
+  
+  /* ================= Modal ================= */
+  #imageModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  #imageModal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  }
+  #imageModal span {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: #ff4d6d;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  #imageModal span:hover { color: #ff1a3c; }
+  
+  /* ================= Buttons / Hover Effects ================= */
+  #contact a {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  #contact a:hover {
+    color: #ec4899;
+    transform: scale(1.1);
+  }
+  
+  /* ================= Footer ================= */
+  footer { letter-spacing: 1px; }
+  
+  /* ================= Swipe Indicator ================= */
+  .swipe-indicator {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 105, 180, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    color: white;
+    animation: bounce 2s infinite;
+  }
+  /* Smooth horizontal scroll for gallery & videos */
 .scroll-container {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-}
-.scroll-container > div {
-  flex-shrink: 0;
-  scroll-snap-align: start;
-}
-.scroll-container img {
-  width: 16rem;
-  height: 20rem;
-  object-fit: cover;
-  border-radius: 1rem;
-  transition: transform 0.3s ease;
-}
-.scroll-container img:hover { transform: scale(1.05); }
-
-/* ================= Modal ================= */
-#imageModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-}
-#imageModal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-#imageModal span {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  font-size: 3rem;
-  color: #ff4d6d;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-#imageModal span:hover { color: #ff1a3c; }
-
-/* ================= Buttons / Hover Effects ================= */
-#contact a {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-#contact a:hover {
-  color: #ec4899;
-  transform: scale(1.1);
-}
-
-/* ================= Footer ================= */
-footer { letter-spacing: 1px; }
-
-/* ================= Swipe Indicator ================= */
-.swipe-indicator {
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: rgba(255, 105, 180, 0.8);
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  color: white;
-  animation: bounce 2s infinite;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-50%) translateX(10px); }
-}
-/* Smooth horizontal scroll for gallery & videos */
-.scroll-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: 1.5rem; /* space between items */
-}
-
-/* Hide scrollbar (optional) */
-.scroll-container::-webkit-scrollbar {
-  display: none;
-}
-.scroll-container {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem; /* space between items */
+  }
+  
+  /* Hide scrollbar (optional) */
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(10px); }
+  }
