@@ -36,15 +36,15 @@
   </ul>
 </nav>
 
-<section id="home" 
-  class="hero min-h-screen flex flex-col items-center justify-center text-center px-6 bg-cover bg-center bg-no-repeat relative" 
-  style="background-image: url('assets/images/Backgroung.jpg');">
+<section id="home" class="hero min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
   
+  <img src="assets/images/Backgroung.jpg" alt="Background"
+       class="responsive-bg absolute inset-0 w-full h-full object-cover -z-10">
+
   <!-- Overlay -->
-  <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+  <div class="absolute inset-0 bg-white bg-opacity-10"></div>
 
-
-  <!-- Button fixed at bottom (auto adjusts with device size) -->
+  <!-- Button -->
   <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
     <a href="#contact" 
        class="inline-block bg-pink-600 hover:bg-pink-700 text-white px-10 py-4 text-lg md:text-xl font-semibold rounded-xl shadow-lg transition">
@@ -52,6 +52,7 @@
     </a>
   </div>
 </section>
+
 
 <section id="about" class="py-20 bg-pink-200 "> 
   <div class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row items-center"> 
