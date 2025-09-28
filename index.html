@@ -463,13 +463,22 @@
 
 
 <script>
-  // Mobile Menu
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
+     // Mobile Menu
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+  
+    // Toggle menu on button click
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  
+    // Close menu when a link is clicked
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
   // Gallery Modal
   function openModal(src) {
     const modal = document.getElementById("imageModal");
