@@ -36,12 +36,26 @@
   </ul>
 </nav>
 
-<section id="home" class="hero h-screen flex items-center justify-center text-center py-20 px-10 bg-pink-300" style="background-image: url('assets/images/rounak\ logo.png');background-position:bottom; background-size: 100%;"> 
-  <div> 
-    <h2 class="text-5xl font-bold text-white">Welcome to Glitter Diary</h2> 
-    <p class="mt-4 text-lg font-semibold text-black">Bringing out your inner beauty with art and passion</p> 
-    <a href="#contact" class="mt-6 inline-block bg-pink-500 text-white px-6 py-3 rounded-lg shadow hover:bg-white-400">Book Now</a> 
-  </div> 
+<section id="home" 
+  class="hero h-screen flex flex-col items-center justify-center text-center px-10 bg-cover bg-center relative" 
+  style="background-image: url('assets/images/Background.jpg'); background-position: center; background-size: cover;">
+  
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <div class="relative z-10">
+    <img src="assets/images/rounak logo.png" 
+         alt="Glitter Diary Logo" 
+         class="mx-auto mb-10 w-72 md:w-[28rem] lg:w-[32rem]">
+
+    <h2 class="text-5xl md:text-6xl font-bold text-gray">Welcome to Glitter Diary</h2>
+
+    <p class="mt-4 text-xl font-semibold text-white">Bringing out your inner beauty with art and passion</p>
+
+    <a href="#contact" 
+       class="mt-8 inline-block bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 text-lg rounded-lg shadow-lg transition">
+      Book Now
+    </a>
+  </div>
 </section>
 
 <section id="about" class="py-20 bg-pink-200 "> 
